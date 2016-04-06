@@ -4,8 +4,22 @@
 .bottom {
     position: absolute;
     bottom: 0;
+    width: 100%;
+    margin: 0;
+}
+
+.bottom > * {
+	vertical-align: middle;
+	margin: 0px 0px 16px 0px;
 }
 .playback_btn{
-	height: 42px; 
-	width: 42px;
+	height: 38px; 
+	width: 38px;
 }
+
+#progress_bar {
+	display: inline-block;
+	width: 80%;
+	height: 3px;
+	background-color: teal;
+}	
