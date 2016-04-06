@@ -39,8 +39,8 @@
 <script>
 // Bind an event to window.orientationchange that, when the device is turned,
 // gets the orientation and displays it to on screen.
-$(".top").hide();
-$(".bottom").hide();
+// $(".top").hide();
+// $(".bottom").hide();
 $( window ).on( "orientationchange", function( event ) {
   $( "#orientation" ).text( "" );
 });
@@ -48,7 +48,7 @@ $( window ).on( "orientationchange", function( event ) {
 // You can also manually force this event to fire.
 $( window ).orientationchange();
 $(function (){
-			$().bind("tap",tapHandler);
+			$("container").bind("tap",tapHandler);
 			function tapHandler(event){
 				console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
