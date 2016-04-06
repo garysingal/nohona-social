@@ -2,13 +2,6 @@
 <html>
 <head>
 
-	
-		<div class= "video-frame"><iframe width="560" height="315" src="https://www.youtube.com/embed/Myp9RZ1TXPE" controls="0" frameborder="0" allowfullscreen autoplay></iframe></div>
-
-		<script>
-		
-		</script>
-
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -55,8 +48,9 @@ $( window ).on( "orientationchange", function( event ) {
 // You can also manually force this event to fire.
 $( window ).orientationchange();
 $(function (){
-			$(".ui-content").bind("tap",tapHandler);
+			$().bind("tap",tapHandler);
 			function tapHandler(event){
+				console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
 				$(".bottom").slideUp("fast").delay(2000).fadeOut();
 			}
