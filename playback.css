@@ -1,0 +1,11 @@
+#container {
+    position: relative;
+}
+.bottom {
+    position: absolute;
+    bottom: 0;
+}
+.playback_btn{
+	height: 42px; 
+	width: 42px;
+}
