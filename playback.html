@@ -21,8 +21,26 @@
 			
 		</div>
 		<div class="top">
-			<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-			<a href="index.html" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+			<div id="back-button">
+			<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a></div>
+
+			<div id="menu">
+			<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button">Open panel</a>
+			
+			
+<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+	<ul class="userList">
+		<li>Samarth</li>
+		<li>Catherine</li>
+		<li>Michael</li>
+	</ul>	
+    <button data-theme="a" data-icon="back" data-mini="true">Back</button>
+    <button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
+    <button data-theme="a" data-icon="search" data-mini="true">Search</button>
+	 </div>
+</div>
+
+			
 		</div>
 		<div class="bottom">
 			<img src="reaction_button.png" class="playback_btn">
@@ -35,12 +53,13 @@
 
 </div>
 
- 
+
+
 <script>
 // Bind an event to window.orientationchange that, when the device is turned,
 // gets the orientation and displays it to on screen.
-// $(".top").hide();
-// $(".bottom").hide();
+$(".top").hide();
+$(".bottom").hide();
 $( window ).on( "orientationchange", function( event ) {
   $( "#orientation" ).text( "" );
 });
@@ -48,11 +67,11 @@ $( window ).on( "orientationchange", function( event ) {
 // You can also manually force this event to fire.
 $( window ).orientationchange();
 $(function (){
-			$("container").bind("tap",tapHandler);
+			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
 				console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
-				$(".bottom").slideUp("fast").delay(2000).fadeOut();
+				$(".bottom").slideDown("fast").delay(2000).fadeOut();
 			}
 		});
 </script>
