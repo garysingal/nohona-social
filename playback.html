@@ -1,6 +1,56 @@
 <!DOCTYPE html>
 <html>
-	<body>
-		<a href="#"> Play here! </a>
-	</body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playback screen</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="playback.css" rel="stylesheet">
+</head>
+<body>
+ 
+<h1 id="orientation">orientationchange Not Supported on this Device.</h1>
+<div data-role="page" id="playback">
+	<div class="ui-content">
+
+		<div class="screen">
+				<img src="/assets/img/screen1.jpg">
+		</div>
+
+		<div id="container" class="overlay">
+			
+			
+
+			<div class="top">
+				<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+				<a href="index.html" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+			</div>
+			<div class="bottom">
+				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+
+					<div id="progress_bar"></div>
+
+				<a href="index.html" id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+ 
+<script>
+// Bind an event to window.orientationchange that, when the device is turned,
+// gets the orientation and displays it to on screen.
+$( window ).on( "orientationchange", function( event ) {
+  $( "#orientation" ).text( "" );
+});
+ 
+// You can also manually force this event to fire.
+$( window ).orientationchange();
+</script>
+ 
+</body>
 </html>
