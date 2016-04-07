@@ -1,0 +1,46 @@
+#container {
+    position: relative;
+}
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    margin: 0px 0px 16px 0px;
+}
+
+.bottom > * {
+	vertical-align: middle;
+	margin: 0px 0px 16px 0px;
+}
+.playback_btn{
+	height: 38px; 
+	width: 38px;
+}
+
+#progress_bar {
+	display: inline-block;
+	width: 80%;
+	height: 3px;
+	background-color: teal;
+}
+
+
+.overlay {
+    position:absolute !important;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    z-index:9999;
+    color:white;
+}
+
+.ui-content {
+	background-color: black;
+	padding: 0px;
+}
+
+.screen > * {
+	width: 100%;
+}
