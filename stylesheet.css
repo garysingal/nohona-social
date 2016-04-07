@@ -44,23 +44,23 @@ p{
 }
 
 .left-arrow{
-width:22px;
-display:block;
-margin-top:50px;
-float:left;
+  width:22px;
+  display:block;
+  margin-top:50px;
+  float:left;
 }
 
 .right-arrow{
-width:22px;
-display:block;
-margin-top:50px;
-float:left;
+  width:22px;
+  display:block;
+  margin-top:50px;
+  float:left;
 }
 
 .covers {
-position: relative;
-overflow: auto;
-float:left;
+  position: relative;
+  overflow: auto;
+  float:left;
 }
 
 .square{
@@ -70,3 +70,7 @@ float:left;
   border-width: 1px;
 }
 
+.movie-img{
+  width: 200px;
+  height: 300px;
+}
