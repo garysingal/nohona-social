@@ -26,17 +26,19 @@
 				<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
 			</div>
 			<div id="menu">
-					<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn">Open panel</a>
+				<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn">Open panel</a>
 					
-					<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
-						<ul class="userList">
-							<li>Samarth</li>
-							<li>Catherine</li>
-							<li>Michael</li>
-						</ul>	
-    
-	 				</div>
+				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+					<ul class="userList">
+						Invite to sync-watch...
+						<li>Samarth</li>
+						<li>Catherine</li>
+						<li>Michael</li>
+					</ul>
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">close_button</a>	
 				</div>
+
+			</div>	
 
 				
 			</div>
@@ -71,6 +73,7 @@ $(function (){
 				console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
 				$(".bottom").slideDown("fast").delay(2000).fadeOut();
+				$("popupPanel").hide();
 			}
 		});
 </script>
