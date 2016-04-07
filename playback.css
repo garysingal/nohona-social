@@ -3,10 +3,20 @@
 }
 
 .top{
+    width: 100%;
 	position: absolute;
 	top: 0;
 }
 
+#back{
+    position: absolute;
+    left: 0;
+}
+
+#menu{
+
+    text-align: right;
+}
 
 .bottom {
     position: absolute;
@@ -48,7 +58,7 @@
 }
 
 .userList{
-	color: black;
+	color: white;
 }
 #popupPanel-popup {
     right: 0 !important;
@@ -56,15 +66,16 @@
 }
 #popupPanel {
     width: 200px;
+    height: 500px;
     border: 1px solid #000;
     border-right: none;
-    /*background: rgba(0,0,0,.5);*/
+    background: rgba(0,0,0,.5);
     margin: -1px 0;
     /*opacity: 0.3;*/
 }
-/*#popupPanel .ui-btn {
+#popupPanel .ui-btn {
     margin: 2em 15px;
-}*/
+}
 
 
 .screen > * {

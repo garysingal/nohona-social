@@ -22,14 +22,11 @@
 
 		<div id="container" class="overlay">
 			<div class="top">
+				<div id="back">
 				<a href="index.html" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-				<a href="index.html" data-role="button" data-icon="bars" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
 			</div>
-			<div class="bottom">
-				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
-				<div id="progress_bar"></div>
-				<div id="menu">
-					<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button">Open panel</a>
+			<div id="menu">
+					<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn">Open panel</a>
 					
 					<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 						<ul class="userList">
@@ -41,6 +38,13 @@
 	 				</div>
 				</div>
 
+				
+			</div>
+			<div class="bottom">
+				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+				<div id="progress_bar"></div>
+				<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+				
 
 			</div>
 		</div>
