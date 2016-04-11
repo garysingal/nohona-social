@@ -1,105 +1,180 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<title>Friend Profile</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+ 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 		<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
         <link href = "stylesheet.css" rel = "stylesheet">
     </head>
 	<body>
-		<div id = "header">
-			<ul>
-			<a href="index.html"><img src="assets/img/logo.png" height="80"></img></a>
-			</ul>
+		<div class="container-fluid" id="home">
+		
+		<div class="header">
+			<img src="assets/img/logo.png" height="60"></img>
 		</div>
-		<div id = "name">
-			<ul>
-			<li><img src="assets/img/person icon.png" height="70"></img></li>
-			<li><h1>Jiwon Choi</h1></li>
-			</ul>
+
+		<div class="row">
+			<div class="col-xs-2">
+				<a href="friends.html" class="btn btn-default btn-circle" role="button"><i class="fa fa-arrow-left"></i></a>
+			</div>
+			<div class="col-xs-2">
+				<h2><i class="fa fa-user"></i></h2>
+			</div>
+			<div class="col-xs-4">
+				<h2>Jiwon Choi</h2>
+			</div>
 		</div>
-		<div class = "reactions">
-			<ul>
-			<p>Recently Watched</p>
-		    <li><img src="assets/img/1.jpg" height="200" width="140"></img></li>
-		    <li>
-				<div class = "left-arrow">
-				<a href="#prev">
-					<img src="assets/img/arrow_left.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-			<li class="square">
-		    	<p class="textReaction">4:23</p>
-				<p class="textReaction" align="center">Haha that is crazy...</p>
-			</li>
-			<li class="square">
-			    <p class="textReaction">13:02</p>
-				<p class="textReaction" align="center">Is he serious???</p>
-			</li>
-			<li>
-	      		<div class = "right-arrow">
-				<a href="#next">
-					<img src="assets/img/arrow_right.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-		    </ul>
-      	</div>
 
-      	<div class = "reactions">
-      		<ul>
-			<li><img src="assets/img/2.jpg" height="200" width="140"></img></li>
-		    <li>
-				<div class = "left-arrow">
-				<a href="#prev">
-					<img src="assets/img/arrow_left.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-			<li>
-				<p class="textReaction">5:20</p>
-				<img src="assets/img/reaction1.png" height="180" style="z-index:-1"></img>
-			</li>
-			<li class="square">
-		   		<p class="textReaction">6:27</p>
-				<p class="textReaction" align="center">I love this part!</p>
-		    </li>
-	      	<li>
-	      		<div class = "right-arrow">
-				<a href="#next">
-					<img src="assets/img/arrow_right.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-      		</ul>
-      	</div>
+		<div><p>Recently Watched:</p></div>
+		<div class="row">
+			<div class="col-xs-4"><a href="playback.html"><img src="assets/img/1.jpg" class="movie-img"></img></a></div>
+			<div class="col-xs-8">
+			<div class="carousel slide" id="Carousel1">
+			  <div class="carousel-inner">
+			    <div class="item active">
+			        <div class="col-xs-4">
+			      	<li class="square">
+				    	<p class="textReaction">4:23</p>
+						<p class="textReaction" align="center">Haha that is crazy...</p>
+					</li>
+					</div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">13:02</p>
+						<p class="textReaction" align="center">Is he serious???</p>
+					</li>
+			      </div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">25:10</p>
+						<p class="textReaction" align="center">Oh that's funny!</p>
+					</li>
+			      </div>
+			    </div>
+			    
+			  </div>
+			  <a class="left-arrow" href="#Carousel1" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
+			  <a class="right-arrow" href="#Carousel1" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
+			</div>
+			</div>
+		</div>
 
-      	<div class = "reactions">
-      		<ul>
-			<li><img src="assets/img/3.jpg" height="200"></img></li>
-			<li>
-				<div class = "left-arrow">
-				<a href="#prev">
-					<img src="assets/img/arrow_left.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-			<li class="square">
-		    	<p class="textReaction">3:04</p>
-				<p class="textReaction" align="center">He is so funny :)</p>
-		    </li>
-			<li>
-				<p class="textReaction">7:12</p>
-				<img src="assets/img/reaction2.png" height="180"></img>
-			</li>
-	      	<li>
-	      		<div class = "right-arrow">
-				<a href="#next">
-					<img src="assets/img/arrow_right.jpg" width="50"></img>
-				</a>
-				</div>
-			</li>
-      		</ul>
+		<div class="row">
+			<div class="col-xs-4"><a href="playback.html"><img src="assets/img/2.jpg" class="movie-img"></img></a></div>
+			<div class="col-xs-8">
+			<div class="carousel slide" id="Carousel2">
+			  <div class="carousel-inner">
+			    <div class="item active">
+			        <div class="col-xs-4">
+			      	<li class="square">
+				    	<p class="textReaction">5:20</p>
+						<img src="assets/img/reaction1.png" width="68"></img>
+					</li>
+					</div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">6:27</p>
+						<p class="textReaction" align="center">I love this part!</p>
+					</li>
+			      </div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">16:10</p>
+						<p class="textReaction" align="center">That's a good one!</p>
+					</li>
+			      </div>
+			    </div>
+			    
+			  </div>
+			  <a class="left-arrow" href="#Carousel2" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
+			  <a class="right-arrow" href="#Carousel2" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
+			</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-4"><a href="playback.html"><img src="assets/img/3.jpg" class="movie-img"></img></a></div>
+			<div class="col-xs-8">
+			<div class="carousel slide" id="Carousel3">
+			  <div class="carousel-inner">
+			    <div class="item active">
+			        <div class="col-xs-4">
+			      	<li class="square">
+				    	<p class="textReaction">3:04</p>
+						<p class="textReaction" align="center">He is so funny :)</p>
+					<li>
+					</div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">7:12</p>
+					    <img src="assets/img/reaction2.png" width="68"></img>
+					</li>
+			      </div>
+			    </div>
+			    <div class="item">
+			      <div class="col-xs-4">
+			      	<li class="square">
+					    <p class="textReaction">20:30</p>
+						<p class="textReaction" align="center">Hahahahahaha</p>
+					</li>
+			      </div>
+			    </div>
+			    
+			  </div>
+			  <a class="left-arrow" href="#Carousel3" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
+			  <a class="right-arrow" href="#Carousel3" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
+			</div>
+			</div>
+		</div>
+
       	</div>
       	
+      	<script>
+			$('#Carousel1').carousel({
+			  interval: 4000
+			})
+
+			$('#Carousel2').carousel({
+			  interval: 4000
+			})
+
+			$('#Carousel3').carousel({
+			  interval: 4000
+			})
+
+			$('.carousel .item').each(function(){
+			  var next = $(this).next();
+			  if (!next.length) {
+			    next = $(this).siblings(':first');
+			  }
+			  next.children(':first-child').clone().appendTo($(this));
+			  
+			  for (var i=0;i<3;i++) {
+			    next=next.next();
+			    if (!next.length) {
+			    	next = $(this).siblings(':first');
+			  	}
+			    
+			    next.children(':first-child').clone().appendTo($(this));
+			  }
+			});
+		</script>
+
 	</body>
 </html>
