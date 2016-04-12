@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Nohona Home</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+ 		<!-- <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" /> -->
+ 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+ 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ 		<!-- <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
+        <link href = "stylesheet.css" rel = "stylesheet">
+    </head>
+	<body>
+		<div class="container-fluid" id="home">
+
+		<div class="header">
+			<img src="assets/img/logo.png" height="60"></img>
+		</div>
+
+		<div class="row">
+			<div class="col-xs-6">
+				<div class="buttons">
+					<a class="buttons-text" href="search.html"><p><span class="fa fa-search"></span>&nbsp; Search</p></a>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="buttons">
+					<a class="buttons-text" href="friends.html"><p><span class="fa fa-users"></span>&nbsp; Friends</p></a>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-xs-12 text-center"><h2>Video Playback</h2></div>
+		<div class="col-xs-12">
+		<div class="carousel slide" id="Carousel1">
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/1.png" class="movie-img"></img></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/12.png" class="movie-img"></img></a></div>
+		    </div>
+				<div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/15.png" class="movie-img"></img></a></div>
+		    </div>
+				<div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/21.png" class="movie-img"></img></a></div>
+		    </div>
+				<div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/26.png" class="movie-img"></img></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/30.png" class="movie-img"></img></a></div>
+		    </div>
+		  </div>
+		  <a class="left-arrow" href="#Carousel1" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
+		  <a class="right-arrow" href="#Carousel1" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
+		</div>
+		</div>
+
+
+
+		<div class="col-xs-12">
+		<div class="carousel slide" id="Carousel2">
+		  <div class="carousel-inner">
+		    <div class="item active">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction1.png" class="movie-img"></img></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction2.png" class="movie-img"></img></a></div>
+		    </div>
+		    <div class="item">
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction3.png" class="movie-img"></img></a></div>
+		    </div>
+		  </div>
+		  <a class="left-arrow" href="#Carousel2" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
+		  <a class="right-arrow" href="#Carousel2" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
+		</div>
+		</div>
+		<div class="col-xs-12 text-center"><h2>Your Reactions</h2></div>
+
+
+      	</div>
+      	<script>
+			$('#Carousel1').carousel({
+			  interval: 4000
+			})
+
+			$('#Carousel2').carousel({
+			  interval: 4000
+			})
+
+			$('.carousel .item').each(function(){
+			  var next = $(this).next();
+			  if (!next.length) {
+			    next = $(this).siblings(':first');
+			  }
+			  next.children(':first-child').clone().appendTo($(this));
+
+			  for (var i=0;i<3;i++) {
+			    next=next.next();
+			    if (!next.length) {
+			    	next = $(this).siblings(':first');
+			  	}
+
+			    next.children(':first-child').clone().appendTo($(this));
+			  }
+			});
+		</script>
+	</body>
+</html>
