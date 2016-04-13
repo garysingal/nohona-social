@@ -1,8 +1,10 @@
-@font-face{
+/*@font-face{
   font-family: 'amatic';
   src: url('assets/fonts/amatic/AmaticSC-Regular.ttf');
 }
-
+body{
+  font-family:amatic,sans-serif;
+}*/
 #container {
     position: relative;
 }
@@ -20,7 +22,8 @@
 
 #menu{
 
-    text-align: right;
+    position: absolute;
+    right: 0;
 }
 
 .bottom {
@@ -53,7 +56,7 @@
     left:0;
     right:0;
     bottom:0;
-    z-index:9999;
+    z-index:2;
     color:white;
 }
 
@@ -72,23 +75,25 @@
 }
 #popupPanel {
     width: 200px;
-    height: 500px;
     border: 1px solid #000;
     border-right: none;
     background: rgba(0,0,0,.5);
     margin: -1px 0;
-    /*opacity: 0.3;*/
 }
-/*#popupPanel .ui-btn {
+#popupPanel .ui-btn {
     margin: 2em 15px;
 }
-*/
+
+
 
 .screen > * {
 	width: 100%;
 }
 
-ul li{
-    border: #cce5ff;
-    margin: 5px;
+
+.friends{
+  margin-top: 10px;
+}
+.dotFriends{
+  margin-top: 18px;
 }

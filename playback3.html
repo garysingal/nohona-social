@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playback screen</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="playback.css" rel="stylesheet">
+</head>
+<body>
+ 
+<h1 id="orientation">orientationchange Not Supported on this Device.</h1>
+<div data-role="page" id="playback">
+	<div class="ui-content">
+		<div class="screen">
+				<img id="vid_img" src="assets/video/1.png"></img>
+		</div>
+
+		<div id="container" class="overlay">
+			<div class="top">
+				<div id="back">
+				<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+			</div>
+			<div id="menu">
+				<a id="menu-button" href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext" >Open panel</a>
+			
+				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+
+				    <button data-theme="a" data-icon="back" data-mini="true">Back</button>
+				    <button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
+				    <button data-theme="a" data-icon="search" data-mini="true">Search</button>
+					 
+				</div>
+
+				<!-- <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn">Open panel</a>
+					
+				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+					<ul class="userList">
+						Invite to sync-watch...
+						<li>Samarth</li>
+						<li>Catherine</li>
+						<li>Michael</li>
+					</ul>
+					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">close_button</a>	
+				</div> -->
+
+			</div>	
+
+				
+			</div>
+			<div class="bottom">
+				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+				<div id="progress_bar"></div>
+				<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+				
+
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<script>
+// Bind an event to window.orientationchange that, when the device is turned,
+// gets the orientation and displays it to on screen.
+$(".top").hide();
+$(".bottom").hide();
+$( window ).on( "orientationchange", function( event ) {
+  $( "#orientation" ).text( "" );
+});
+var cur_slide = 1;
+function play_video_slides(){
+	if(cur_slide <= 33){
+		cur_slide++
+		console.log(cur_slide);
+		var image_elt = document.getElementById('vid_img');
+		vid_img.src = "assets/video/"+cur_slide+".png";
+	}
+	else{
+		clearInterval(video_interval);
+		window.location.replace('review.html');
+
+	}
+	// $("vid_img").attr("src","assets/video/"+cur_slide+".png")
+
+}
+// You can also manually force this event to fire.
+$( window ).orientationchange();
+$(function (){
+			$("body").bind("tap",tapHandler);
+			function tapHandler(event){
+				console.log("tapped!");
+				$(".top").slideDown("fast").delay(2000).fadeOut();
+				$(".bottom").slideDown("fast").delay(2000).fadeOut();
+				// $("popupPanel").hide();
+			}
+		});
+
+$( "#popupPanel" ).on({
+    popupbeforeposition: function() {
+        var h = $( window ).height();
+
+        $( "#popupPanel" ).css( "height", h );
+    }
+});
+$("menu-button").bind("tap",tapHandler()){
+	
+}
+var video_interval = setInterval(play_video_slides, 1000);
+</script>
+ 
+</body>
+
+</html>
