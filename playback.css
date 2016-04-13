@@ -75,7 +75,7 @@
     height: 500px;
     border: 1px solid #000;
     border-right: none;
-    background: rgba(0,0,0,.5);
+    background: rgba(0,0,0,0.9);
     margin: -1px 0;
     /*opacity: 0.3;*/
 }
@@ -91,4 +91,43 @@
 ul li{
     border: #cce5ff;
     margin: 5px;
+}
+
+.emoji-opts {
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    padding: 3px;
+    height: 41px;
+    left: 40px;
+    width: 255px;
+}
+
+.bookmarks {
+    display: inline-block;
+    left: 40px;
+    width: 80%;
+    padding-top: 8px;
+}
+
+.bookmark {
+    background-color: orange;
+    height: 20px;
+    width: 5px;
+
+
+}
+
+#bm_1, #bm_2, #bm_3 {
+    display: none;
+}
+
+#bm_1 {
+    margin-left: 80px;
+}
+#bm_2 {
+    margin-left: 100px;
+}
+#bm_3 {
+    margin-left: 30px;
 }
