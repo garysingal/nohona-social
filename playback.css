@@ -31,6 +31,7 @@
 }
 
 .bottom > * {
+    display: inline-block;
 	vertical-align: middle;
 	margin: 0px 0px 16px 0px;
 }
@@ -103,6 +104,13 @@ ul li{
     width: 255px;
 }
 
+.camera_box {
+    margin: 0px;
+}
+#camera {
+    position: absolute;
+    margin-top: 0px;
+}
 .bookmarks {
     display: inline-block;
     left: 40px;
@@ -114,8 +122,6 @@ ul li{
     background-color: orange;
     height: 20px;
     width: 5px;
-
-
 }
 
 #bm_1, #bm_2, #bm_3 {
@@ -130,4 +136,16 @@ ul li{
 }
 #bm_3 {
     margin-left: 30px;
+}
+
+
+#success_camera {
+    visibility: hidden;
+    position: relative;
+    top: -1px;
+    left: -2px;
+    width: 45px;
+    height: 45px;
+    z-index:9999;
+    color:white;s
 }

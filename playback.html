@@ -58,8 +58,10 @@
 					<img class="playback_btn" src="/assets/img/emoji_shy.png">
 				</div>
 				<div id="progress_bar"></div>
-				<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-				
+				<div class="camera_box">
+					<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+					<img id='success_camera' src='/assets/img/success.png'>
+				</div>
 
 			</div>
 		</div>
@@ -98,9 +100,18 @@ $(function (){
 })
 
 $(function (){
+	$("#camera").bind("tap", success_camera);
+	function success_camera(){
+		console.log("camera");
+		setTimeout(function(){ $('#success_camera').css("visibility","hidden") }, 1000);;
+		$("#success_camera").css("visibility", "visible");
+	}
+})
+
+$(function (){
 	$(".emoji-opts").children().bind("tap", select_emoji);
 	function select_emoji(){
-		console.log("select")
+
 		emoji_opts();
 		add_bookmark();
 	}
@@ -108,11 +119,8 @@ $(function (){
 
 function emoji_opts(){	$(".emoji-opts").toggle();}
 function add_bookmark(){
-
 	$("#bm_"+nxt_bkmark).css( "display", "inline-block")
 	nxt_bkmark++;
-	// update id
-
 }
 
 </script>
