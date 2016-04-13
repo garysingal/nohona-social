@@ -20,94 +20,47 @@
 		</div>
 
 		<div class="row">
-			<div class="col-xs-6">
-				<div class="buttons">
-					<a class="buttons-text" href="search.html"><p><span class="fa fa-search"></span>&nbsp; Search</p></a>
-				</div>
+			<div class="col-xs-2">
+				<a href="index.html" class="btn btn-default btn-circle" role="button"><i class="fa fa-arrow-left"></i></a>
 			</div>
-			<div class="col-xs-6">
-				<div class="buttons">
-					<a class="buttons-text" href="friends.html"><p><span class="fa fa-users"></span>&nbsp; Friends</p></a>
-				</div>
+			<div class="col-xs-8">
+				<h2>Review Your Reactions</h2>
 			</div>
 		</div>
+				<table class="table">
+					<tbody>
+						<tr>
+							<td><p class="friends">2:02</p></a></td>
+							<td><img src="assets/img/reaction1.png" height="150"></a></td>
+							<td><img src="assets/img/vid/6.png" height="150"></a></td>
+						</tr>
 
-		<div class="col-xs-12 text-center"><h2>Video Playback</h2></div>
-		<div class="col-xs-12">
-		<div class="carousel slide" id="Carousel1">
-		  <div class="carousel-inner">
-		    <div class="item active">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/1.png" class="movie-img"></img></a></div>
-		    </div>
-		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/12.png" class="movie-img"></img></a></div>
-		    </div>
-				<div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/15.png" class="movie-img"></img></a></div>
-		    </div>
-				<div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/21.png" class="movie-img"></img></a></div>
-		    </div>
-				<div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/26.png" class="movie-img"></img></a></div>
-		    </div>
-		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/vid/30.png" class="movie-img"></img></a></div>
-		    </div>
-		  </div>
-		  <a class="left-arrow" href="#Carousel1" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
-		  <a class="right-arrow" href="#Carousel1" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
-		</div>
-		</div>
+						<tr>
+							<td><p class="friends">4:53</p></a></td>
+							<td><p class="friends">Is he serious???</p>
+							<td><img src="assets/img/vid/11.png" height="150"></a></td>
+						</tr>
 
+						<tr>
+							<td><p class="friends">6:49</p></a></td>
+							<td><img src="assets/img/reaction2.png" height="150"></a></td>
+							<td><img src="assets/img/vid/16.png" height="150"></a></td>
+						</tr>
 
+						<tr>
+							<td><p class="friends">8:29</p></a></td>
+							<td><p class="friends">Oh that's funny!</p>
+							<td><img src="assets/img/vid/21.png" height="150"></a></td>
+						</tr>
 
-		<div class="col-xs-12">
-		<div class="carousel slide" id="Carousel2">
-		  <div class="carousel-inner">
-		    <div class="item active">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction1.png" class="movie-img"></img></a></div>
-		    </div>
-		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction2.png" class="movie-img"></img></a></div>
-		    </div>
-		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/reaction3.png" class="movie-img"></img></a></div>
-		    </div>
-		  </div>
-		  <a class="left-arrow" href="#Carousel2" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
-		  <a class="right-arrow" href="#Carousel2" data-slide="next"><img src="assets/img/arrow_right.jpg" width="30"></img></a>
-		</div>
-		</div>
-		<div class="col-xs-12 text-center"><h2>Your Reactions</h2></div>
+						<tr>
+							<td><p class="friends">10:32</p></a></td>
+							<td><img src="assets/img/reaction3.png" height="150"></a></td>
+							<td><img src="assets/img/vid/28.png" height="150"></a></td>
+						</tr>
 
-
+					</tbody>
+				</table>
       	</div>
-      	<script>
-			$('#Carousel1').carousel({
-			  interval: 4000
-			})
-
-			$('#Carousel2').carousel({
-			  interval: 4000
-			})
-
-			$('.carousel .item').each(function(){
-			  var next = $(this).next();
-			  if (!next.length) {
-			    next = $(this).siblings(':first');
-			  }
-			  next.children(':first-child').clone().appendTo($(this));
-
-			  for (var i=0;i<3;i++) {
-			    next=next.next();
-			    if (!next.length) {
-			    	next = $(this).siblings(':first');
-			  	}
-
-			    next.children(':first-child').clone().appendTo($(this));
-			  }
-			});
-		</script>
 	</body>
 </html>

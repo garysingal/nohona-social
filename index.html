@@ -94,25 +94,25 @@
 		<div class="carousel slide" id="Carousel3">
 		  <div class="carousel-inner">
 		    <div class="item active">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/7.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/7.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/8.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/8.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/9.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/9.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/12.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/12.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/18.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/18.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		    <div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/19.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/19.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 				<div class="item">
-		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/20.jpg" class="movie-img"></img></a></div>
+		      <div class="col-xs-4"><a href="playback.html"><img src="assets/img/20.jpg" class="movie-img img-responsive"></img></a></div>
 		    </div>
 		  </div>
 		  <a class="left-arrow" href="#Carousel3" data-slide="prev"><img src="assets/img/arrow_left.jpg" width="30"></img></a>
@@ -129,32 +129,75 @@
       	<script>
 			$('#Carousel1').carousel({
 			  interval: 4000
-			})
+			});
 
 			$('#Carousel2').carousel({
 			  interval: 4000
-			})
+			});
 
 			$('#Carousel3').carousel({
 			  interval: 4000
-			})
-
-			$('.carousel .item').each(function(){
-			  var next = $(this).next();
-			  if (!next.length) {
-			    next = $(this).siblings(':first');
-			  }
-			  next.children(':first-child').clone().appendTo($(this));
-
-			  for (var i=0;i<3;i++) {
-			    next=next.next();
-			    if (!next.length) {
-			    	next = $(this).siblings(':first');
-			  	}
-
-			    next.children(':first-child').clone().appendTo($(this));
-			  }
 			});
+
+			// $('.carousel .item').each(function(){
+			//
+			// 		// Gets the adjacent image, i.e. the one next in line
+			// 		var next = $(this).next();
+			// 	  if (!next.length) {
+			// 	    next = $(this).siblings(':first');
+			// 	  }
+			//
+			// 	  next.children(':first-child').clone().appendTo($(this));
+			//
+			// 	  for (var i = 0; i < 3; i++) {
+			// 	    	next = next.next();
+			// 	    	if (!next.length) {
+			// 	    		next = $(this).siblings(':first');
+			// 	  		}
+	  	// 				next.children(':first-child').clone().appendTo($(this));
+			// 	  }
+			// });
+			$('#Carousel1 .item').each(function(){
+				  var next = $(this).next();
+				  if (!next.length) {
+				    next = $(this).siblings(':first');
+				  }
+				  next.children(':first-child').clone().appendTo($(this));
+
+				  if (next.next().length>0) {
+				    next.next().children(':first-child').clone().appendTo($(this));
+				  }
+				  else {
+				  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+				  }
+				});$('#Carousel2 .item').each(function(){
+					  var next = $(this).next();
+					  if (!next.length) {
+					    next = $(this).siblings(':first');
+					  }
+					  next.children(':first-child').clone().appendTo($(this));
+
+					  if (next.next().length>0) {
+					    next.next().children(':first-child').clone().appendTo($(this));
+					  }
+					  else {
+					  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+					  }
+					});
+					$('#Carousel3 .item').each(function(){
+						  var next = $(this).next();
+						  if (!next.length) {
+						    next = $(this).siblings(':first');
+						  }
+						  next.children(':first-child').clone().appendTo($(this));
+
+						  if (next.next().length>0) {
+						    next.next().children(':first-child').clone().appendTo($(this));
+						  }
+						  else {
+						  	$(this).siblings(':first').children(':first-child').clone().appendTo($(this));
+						  }
+						});
 		</script>
 	</body>
 </html>
