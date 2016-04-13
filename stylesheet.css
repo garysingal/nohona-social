@@ -57,15 +57,15 @@ p{
 .carousel-inner{
   height:120px;
 }
-/*.carousel-inner .active.left {
- left: -33% !important;
+.carousel-inner .active.left {
+ left: -33%;
 }
-.carousel-inner .next{
- left:  33% !important;
+.carousel-inner .next {
+ left:  33%;
 }
-.carousel-inner .prev{
- left: -33% !important;
-}*/
+.carousel-inner .prev {
+ left: -33%;
+}
 
 .row{
   margin-bottom: 10px;
