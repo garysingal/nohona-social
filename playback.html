@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <link href="playback.css" rel="stylesheet">
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playback screen</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="playback.css" rel="stylesheet">
+</head>
+
 <body>
 	<div data-role="page" id="playback">
 		<div class="ui-content">
@@ -10,13 +17,10 @@
 					<img id="vid_img" src="assets/video/1.png"></img>
 			</div>
 			<div id="container" class="overlay">
-
 				<div class="top">
-
 					<div id="back">
 						<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
 					</div>
-
 					<div id="menu">
 						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext">Open panel</a>
 
@@ -56,24 +60,41 @@
 									</tr>
 								</tbody>
 							</table>
-						</div>
-					</div>
-				</div>
+						</div><!-- close popup -->
+					</div> <!-- close menu -->
+				</div> <!-- close top -->				
+
 				<div class="bottom">
 					<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+					<div class="overlay bookmarks">
+						<div class="bookmark" id="bm_1"></div>
+						<div class="bookmark" id="bm_2"></div>
+						<div class="bookmark" id="bm_3"></div>
+					</div>
+					<div class="overlay emoji-opts">
+						<img class="playback_btn" src="reaction_button.png">
+						<img class="playback_btn" src="/assets/img/emoji_scream.png">
+						<img class="playback_btn" src="/assets/img/emoji_surprised.png">
+						<img class="playback_btn" src="/assets/img/emoji_sad.png">
+						<img class="playback_btn" src="/assets/img/emoji_angry.png">
+						<img class="playback_btn" src="/assets/img/emoji_shy.png">
+					</div>
 					<div id="progress_bar"></div>
-					<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-				</div>
-			</div>
-		</div>
-	</div>
+					<div class="camera_box">
+						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+						<img id='success_camera' src='/assets/img/success.png'>
+					</div>
+				</div> <!-- closes bottom -->
+			</div><!-- closes container -->
+		</div><!-- closes ui-content -->
+	</div> <!-- closes playback -->
+
 <script>
-$(".top").hide();
-$(".bottom").hide();
-$( window ).on( "orientationchange", function( event ) {
-  $( "#orientation" ).text( "" );
-});
+
+/* Variable Declarations*/
 var cur_slide = 1;
+var nxt_bkmark = 1;
+
 function play_video_slides(){
 	if(cur_slide <= 33){
 		cur_slide++
@@ -84,22 +105,73 @@ function play_video_slides(){
 	else{
 		clearInterval(video_interval);
 		window.location.replace('review.html');
-
 	}
-	// $("vid_img").attr("src","assets/video/"+cur_slide+".png")
-
 }
+
+function emoji_opts(){	
+	$(".emoji-opts").toggle();
+}
+
+function add_bookmark(){
+	$("#bm_"+nxt_bkmark).css( "display", "inline-block")
+	nxt_bkmark++;
+}
+
+function clicked_close(){
+	$("popupPanel").fadeOut();
+}
+
+$(".top").hide();
+$(".bottom").hide();
+
+// Bind an event to window.orientationchange that, when the device is turned,
+// gets the orientation and displays it to on screen.
+
+
+
+
+$( window ).on( "orientationchange", function( event ) {
+  $( "#orientation" ).text( "" );
+});
+
+
 // You can also manually force this event to fire.
 $( window ).orientationchange();
+
+
 $(function (){
 			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
-				console.log("tapped!");
+				// console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
 				$(".bottom").slideDown("fast").delay(2000).fadeOut();
 				// $("popupPanel").hide();
 			}
 		});
+$(function(){
+
+	$("#reaction_btn").bind("tap", emoji_opts);
+});
+
+$(function (){
+	$("#camera").bind("tap", success_camera);
+	function success_camera(){
+		// console.log("camera");
+		setTimeout(function(){ $('#success_camera').css("visibility","hidden") }, 1000);;
+		$("#success_camera").css("visibility", "visible");
+	}
+});
+
+$(function (){
+	$(".emoji-opts").children().bind("tap", select_emoji);
+	function select_emoji(){
+
+		emoji_opts();
+		add_bookmark();
+	}
+});
+
+
 
 $( "#popupPanel" ).on({
     popupbeforeposition: function() {
@@ -116,9 +188,8 @@ $( "#popupPanel" ).on({
         $( "#popupPanel" ).css( "height", h );
     }
 });
-function clicked_close(){
-	$("popupPanel").fadeOut();
-}
+
 var video_interval = setInterval(play_video_slides, 2000);
 </script>
 </body>
+</html>
