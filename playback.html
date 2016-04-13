@@ -44,9 +44,24 @@
 			</div>
 			<div class="bottom">
 				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+				<div class="overlay bookmarks">
+					<div class="bookmark" id="bm_1"></div>
+					<div class="bookmark" id="bm_2"></div>
+					<div class="bookmark" id="bm_3"></div>
+				</div>
+				<div class="overlay emoji-opts">
+					<img class="playback_btn" src="reaction_button.png">
+					<img class="playback_btn" src="/assets/img/emoji_scream.png">
+					<img class="playback_btn" src="/assets/img/emoji_surprised.png">
+					<img class="playback_btn" src="/assets/img/emoji_sad.png">
+					<img class="playback_btn" src="/assets/img/emoji_angry.png">
+					<img class="playback_btn" src="/assets/img/emoji_shy.png">
+				</div>
 				<div id="progress_bar"></div>
-				<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-				
+				<div class="camera_box">
+					<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+					<img id='success_camera' src='/assets/img/success.png'>
+				</div>
 
 			</div>
 		</div>
@@ -59,23 +74,55 @@
 <script>
 // Bind an event to window.orientationchange that, when the device is turned,
 // gets the orientation and displays it to on screen.
-$(".top").hide();
-$(".bottom").hide();
+// $(".top").hide();
+// $(".bottom").hide();
+var nxt_bkmark = 1 
+
 $( window ).on( "orientationchange", function( event ) {
   $( "#orientation" ).text( "" );
 });
  
 // You can also manually force this event to fire.
 $( window ).orientationchange();
+// $(function (){
+// 			$("body").bind("tap",tapHandler);
+// 			function tapHandler(event){
+
+// 				console.log("tapped!");
+// 				// $(".top").slideDown("fast").delay(2000).fadeOut();
+// 				// $(".bottom").slideDown("fast").delay(2000).fadeOut();
+// 				// $("popupPanel").hide();
+// 			}
+// 		});
+
 $(function (){
-			$("body").bind("tap",tapHandler);
-			function tapHandler(event){
-				console.log("tapped!");
-				$(".top").slideDown("fast").delay(2000).fadeOut();
-				$(".bottom").slideDown("fast").delay(2000).fadeOut();
-				$("popupPanel").hide();
-			}
-		});
+	$("#reaction_btn").bind("tap", emoji_opts);
+})
+
+$(function (){
+	$("#camera").bind("tap", success_camera);
+	function success_camera(){
+		console.log("camera");
+		setTimeout(function(){ $('#success_camera').css("visibility","hidden") }, 1000);;
+		$("#success_camera").css("visibility", "visible");
+	}
+})
+
+$(function (){
+	$(".emoji-opts").children().bind("tap", select_emoji);
+	function select_emoji(){
+
+		emoji_opts();
+		add_bookmark();
+	}
+})
+
+function emoji_opts(){	$(".emoji-opts").toggle();}
+function add_bookmark(){
+	$("#bm_"+nxt_bkmark).css( "display", "inline-block")
+	nxt_bkmark++;
+}
+
 </script>
  
 </body>
