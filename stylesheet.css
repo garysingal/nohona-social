@@ -156,3 +156,11 @@ p{
   border-radius: 3px;
   color:#004de6;
 }
+
+#cancel-btn{
+  text-align: left;
+}
+
+#play-btn{
+  text-align: right;
+}

@@ -1,106 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Playback screen</title>
-  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-  <link href="playback.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Playback screen</title>
+  <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <link href="playback.css" rel="stylesheet">
 </head>
+
 <body>
- 
-<h1 id="orientation">orientationchange Not Supported on this Device.</h1>
-<div data-role="page" id="playback">
-	<div class="ui-content">
-		<div class="screen">
-				<img id="vid_img" src="assets/video/1.png"></img>
-		</div>
-
-		<div id="container" class="overlay">
-			<div class="top">
-				<div id="back">
-				<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+	<div data-role="page" id="playback">
+		<div class="ui-content">
+			<div class="screen">
+					<img id="vid_img" src="assets/video/1.png"></img>
 			</div>
-			<div id="menu">
-				<a id="menu-button" href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext" >Open panel</a>
-			
-				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+			<div id="container" class="overlay">
+				<div class="top">
+					<div id="back">
+						<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+					</div>
+					<div id="menu">
+						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext">Open panel</a>
 
-				    <button data-theme="a" data-icon="back" data-mini="true">Back</button>
-				    <button data-theme="a" data-icon="grid" data-mini="true">Menu</button>
-				    <button data-theme="a" data-icon="search" data-mini="true">Search</button>
-					 
-				</div>
+						<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
+							<table class="userList">
+								Chat with - 
+								<tbody>
+									<tr>
+										<td><a href="chat.html"><img src="assets/img/person1.png" height="50"></a></td>
+										<td><a data-ajax="false" href="chat.html"><p class="friends">Justin Park</p></a></td>
+										<td><img src="assets/img/green dot.png" height="15" class="dotFriends"></td>
+										<!-- <td><div class="checkbox"><label><input type="checkbox" value=""></label></div></td> -->
+									</tr>
 
-				<!-- <a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-icon="bars" data-iconpos="notext" data-role="button" class="ui-link ui-btn ui-btn-a ui-icon-bars ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn">Open panel</a>
-					
-				<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
-					<ul class="userList">
-						Invite to sync-watch...
-						<li>Samarth</li>
-						<li>Catherine</li>
-						<li>Michael</li>
-					</ul>
-					<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-left">close_button</a>	
-				</div> -->
+									<tr>
+										<td><a href="chat.html"><img src="assets/img/person2.png" height="50"></a></td>
+										<td><a href="chat.html"><p class="friends">Roy Kim</p></a></td>
+										<td><img src="assets/img/green dot.png" height="15" class="dotFriends"></td>
+									</tr>
 
-			</div>	
+									<tr>
+										<td><a href="profile.html"><img src="assets/img/person3.png" height="50"></a></td>
+										<td><a href="profile.html"><p class="friends">Mimi Lee</p></a></td>
+										<td><img src="assets/img/green dot.png" height="15" class="dotFriends"></td>
+									</tr>
 
-				
-			</div>
-			<div class="bottom">
-				<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
-				<div id="progress_bar"></div>
-				<a href="index.html" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
-				
+									<tr>
+										<td><a href="profile.html"><img src="assets/img/person4.png" height="50"></a></td>
+										<td><a href="profile.html"><p class="friends">Hayoung Chang</p></a></td>
+										<td><img src="assets/img/empty dot.png" height="15" class="dotFriends"></td>
+									</tr>
 
-			</div>
-		</div>
-	</div>
+									<tr>
+										<td><a href="profile.html"><img src="assets/img/person5.png" height="50"></a></td>
+										<td><a href="profile.html"><p class="friends">Jiwon Choi</p></a></td>
+										<td><img src="assets/img/empty dot.png" height="15" class="dotFriends"></td>
+									</tr>
+								</tbody>
+							</table>
+						</div><!-- close popup -->
+					</div> <!-- close menu -->
+				</div> <!-- close top -->				
 
-</div>
-
-
+				<div class="bottom">
+					<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+					<div class="overlay bookmarks">
+						<div class="bookmark" id="bm_1"></div>
+						<div class="bookmark" id="bm_2"></div>
+						<div class="bookmark" id="bm_3"></div>
+					</div>
+					<div class="overlay emoji-opts">
+						<img class="playback_btn" src="reaction_button.png">
+						<img class="playback_btn" src="/assets/img/emoji_scream.png">
+						<img class="playback_btn" src="/assets/img/emoji_surprised.png">
+						<img class="playback_btn" src="/assets/img/emoji_sad.png">
+						<img class="playback_btn" src="/assets/img/emoji_angry.png">
+						<img class="playback_btn" src="/assets/img/emoji_shy.png">
+					</div>
+					<div id="progress_bar"></div>
+					<div class="camera_box">
+						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+						<img id='success_camera' src='/assets/img/success.png'>
+					</div>
+				</div> <!-- closes bottom -->
+			</div><!-- closes container -->
+		</div><!-- closes ui-content -->
+	</div> <!-- closes playback -->
 
 <script>
-// Bind an event to window.orientationchange that, when the device is turned,
-// gets the orientation and displays it to on screen.
-$(".top").hide();
-$(".bottom").hide();
-$( window ).on( "orientationchange", function( event ) {
-  $( "#orientation" ).text( "" );
-});
+
+/* Variable Declarations*/
 var cur_slide = 1;
+var nxt_bkmark = 1;
+
 function play_video_slides(){
 	if(cur_slide <= 33){
 		cur_slide++
 		console.log(cur_slide);
 		var image_elt = document.getElementById('vid_img');
-		vid_img.src = "assets/video/"+cur_slide+".png";
+		vid_img.src = "assets/video/vid_rxn/"+cur_slide+".png";
 	}
 	else{
 		clearInterval(video_interval);
 		window.location.replace('review.html');
-
 	}
-	// $("vid_img").attr("src","assets/video/"+cur_slide+".png")
-
 }
+
+function emoji_opts(){	
+	$(".emoji-opts").toggle();
+}
+
+function add_bookmark(){
+	$("#bm_"+nxt_bkmark).css( "display", "inline-block")
+	nxt_bkmark++;
+}
+
+function clicked_close(){
+	$("popupPanel").fadeOut();
+}
+
+$(".top").hide();
+$(".bottom").hide();
+
+// Bind an event to window.orientationchange that, when the device is turned,
+// gets the orientation and displays it to on screen.
+
+
+
+
+$( window ).on( "orientationchange", function( event ) {
+  $( "#orientation" ).text( "" );
+});
+
+
 // You can also manually force this event to fire.
 $( window ).orientationchange();
+
+
 $(function (){
 			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
-				console.log("tapped!");
+				// console.log("tapped!");
 				$(".top").slideDown("fast").delay(2000).fadeOut();
 				$(".bottom").slideDown("fast").delay(2000).fadeOut();
 				// $("popupPanel").hide();
 			}
 		});
+$(function(){
+
+	$("#reaction_btn").bind("tap", emoji_opts);
+});
+
+$(function (){
+	$("#camera").bind("tap", success_camera);
+	function success_camera(){
+		// console.log("camera");
+		setTimeout(function(){ $('#success_camera').css("visibility","hidden") }, 1000);;
+		$("#success_camera").css("visibility", "visible");
+	}
+});
+
+$(function (){
+	$(".emoji-opts").children().bind("tap", select_emoji);
+	function select_emoji(){
+
+		emoji_opts();
+		add_bookmark();
+	}
+});
+
+
 
 $( "#popupPanel" ).on({
     popupbeforeposition: function() {
@@ -109,12 +180,16 @@ $( "#popupPanel" ).on({
         $( "#popupPanel" ).css( "height", h );
     }
 });
-$("menu-button").bind("tap",tapHandler()){
-	
-}
-var video_interval = setInterval(play_video_slides, 1000);
-</script>
- 
-</body>
 
+$( "#popupPanel" ).on({
+    popupbeforeposition: function() {
+        var h = $( window ).height();
+
+        $( "#popupPanel" ).css( "height", h );
+    }
+});
+
+var video_interval = setInterval(play_video_slides, 2000);
+</script>
+</body>
 </html>
