@@ -122,36 +122,29 @@ function play_video_slides(){
 	}
 }
 
+/* Toggle emjoi options when tapped*/
 function emoji_opts(){	
 	$(".emoji-opts").toggle();
 }
 
+/* faking adding emojis to the video timeline*/
 function add_bookmark(){
 	$("#bm_"+nxt_bkmark).css( "display", "inline-block")
 	nxt_bkmark++;
 }
 
+/* close the side chat panel*/
 function clicked_close(){
 	$("popupPanel").fadeOut();
 }
 
+
+
+/* default is full screen*/
 $(".top").hide();
 $(".bottom").hide();
 
-// Bind an event to window.orientationchange that, when the device is turned,
-// gets the orientation and displays it to on screen.
-
-
-
-$( window ).on( "orientationchange", function( event ) {
-	document.getElementById('block_land').style.display = (screen.width>screen.height) ? 'none' : 'block';
-});
-
-
-// You can also manually force this event to fire.
-$( window ).orientationchange();
-
-
+ /* Slide away top & bottom menus when tapped at screen*/
 $(function (){
 			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
@@ -162,11 +155,20 @@ $(function (){
 			}
 		});
 
-$(function(){
+// Bind an event to window.orientationchange that, when the device is turned,
+// gets the orientation and displays it to on screen.
+$( window ).on( "orientationchange", function( event ) {
+	document.getElementById('block_land').style.display = (screen.width>screen.height) ? 'none' : 'block';
+});
+$( window ).orientationchange();
 
+
+/**** Toggle emoji options  ****/
+$(function(){
 	$("#reaction_btn").bind("tap", emoji_opts);
 });
 
+/*** Fakeing "success" of recording ***/
 $(function (){
 	$("#camera").bind("tap", success_camera);
 	function success_camera(){
@@ -179,7 +181,6 @@ $(function (){
 $(function (){
 	$(".emoji-opts").children().bind("tap", select_emoji);
 	function select_emoji(){
-
 		emoji_opts();
 		add_bookmark();
 	}
