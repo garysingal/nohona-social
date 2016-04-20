@@ -13,6 +13,7 @@
 </head>
 
 <body>
+	<div id="block_land"> Use landscape mode to see your Nohona video! </div>
 	<div data-role="page" id="playback">
 		<div class="ui-content">
 			<div class="screen">
@@ -108,7 +109,7 @@
 var cur_slide = 1;
 var nxt_bkmark = 1;
 
-/*function play_video_slides(){
+function play_video_slides(){
 	if(cur_slide <= 33){
 		cur_slide++
 		console.log(cur_slide);
@@ -119,7 +120,7 @@ var nxt_bkmark = 1;
 		clearInterval(video_interval);
 		window.location.replace('review.html');
 	}
-}*/
+}
 
 function emoji_opts(){	
 	$(".emoji-opts").toggle();
@@ -142,9 +143,8 @@ $(".bottom").hide();
 
 
 
-
 $( window ).on( "orientationchange", function( event ) {
-  $( "#orientation" ).text( "" );
+	document.getElementById('block_land').style.display = (screen.width>screen.height) ? 'none' : 'block';
 });
 
 
@@ -156,8 +156,8 @@ $(function (){
 			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
 				// console.log("tapped!");
-				$(".top").slideDown("fast")/*.delay(2000).fadeOut();*/
-				$(".bottom").slideDown("fast")/*.delay(2000).fadeOut();*/
+				$(".top").slideDown("fast").delay(2000).fadeOut();
+				$(".bottom").slideDown("fast").delay(2000).fadeOut();
 				// $("popupPanel").hide();
 			}
 		});
