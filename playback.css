@@ -67,15 +67,13 @@ body{
 	padding: 0px;
 }
 
-.userList{
-	color: #91D44E;
-    font-family: "Lucida Console", Monaco, monospace;
-}
+
 #popupPanel-popup {
     right: 0 !important;
     left: auto !important;
 }
 #popupPanel {
+    color: white;
     width: 200px;
     border: 1px solid #000;
     border-right: none;
@@ -85,6 +83,7 @@ body{
 #popupPanel .ui-btn {
     margin: 2em 15px;
 }
+
 
 .video {
     width: auto;
@@ -107,7 +106,10 @@ body{
 
 
 .friends{
-  margin-top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
 }
 .dotFriends{
   margin-top: 18px;
@@ -167,4 +169,17 @@ body{
     height: 45px;
     z-index:9999;
     color:white;s
+}
+
+
+#block_land{
+    position:absolute; 
+    top:0; 
+    left:0; 
+    text-align:center; 
+    background:white; 
+    width:100%; 
+    height:100%; 
+    display:none;
+    z-index: 9999999;
 }
