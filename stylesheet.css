@@ -72,16 +72,29 @@ p{
   margin-bottom: 10px;
 }
 .textReaction{
-  font-size:120%;
+  font-family: calibri,sans-serif;
+  font-weight: lighter;
+  font-size:100%;
 }
 .friends{
-  margin-top: 10px;
+  margin-top: 14px;
+  font-family: calibri,sans-serif;
+  font-size: 120%;
+  font-weight: lighter;
 }
 .dotFriends{
   margin-top: 18px;
 }
+
+.chatBtn{
+  position: relative;
+  top: 10px;
+}
+
 .chatText{
-  font-size:120%;
+  font-family: calibri,sans-serif;
+  font-weight: lighter;
+  font-size:100%;
   margin-top: 10px;
 }
 .keyboard{
@@ -127,6 +140,7 @@ p{
   width: 80px;
   height: 120px;
 }
+
 
 #custom-search-input {
   margin:0;
