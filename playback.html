@@ -11,6 +11,7 @@
 </head>
 
 <body>
+	<div id="block_land"> Use landscape mode to see your Nohona video! </div>
 	<div data-role="page" id="playback">
 		<div class="ui-content">
 			<div class="screen">
@@ -81,7 +82,7 @@
 					</div>
 					<div id="progress_bar"></div>
 					<div class="camera_box">
-						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+						<a href="#"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
 						<img id='success_camera' src='/assets/img/success.png'>
 					</div>
 				</div> <!-- closes bottom -->
@@ -129,9 +130,8 @@ $(".bottom").hide();
 
 
 
-
 $( window ).on( "orientationchange", function( event ) {
-  $( "#orientation" ).text( "" );
+	document.getElementById('block_land').style.display = (screen.width>screen.height) ? 'none' : 'block';
 });
 
 
