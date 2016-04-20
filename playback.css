@@ -9,6 +9,12 @@ body{
     position: relative;
 }
 
+.ui-content {
+    width: 100vw;
+    height: 100vh;
+}
+a:link, a:visited, a:hover, a:active {color: inherit !important;}      
+
 .top{
     width: 100%;
 	position: absolute;
@@ -18,30 +24,40 @@ body{
 #back{
     position: absolute;
     left: 0;
+    font-size: 2.3em;
+    margin: 0px 10px;
 }
 
 #menu{
 
     position: absolute;
     right: 0;
+    font-size: 1.5em;
+    margin: 10px;
 }
+
 
 .bottom {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding-bottom: 22px;
-    margin: 0px 0px 16px 0px;
+    padding-bottom: 10px;
 }
 
 .bottom > * {
     display: inline-block;
 	vertical-align: middle;
-	margin: 0px 0px 16px 0px;
+	margin: 0px;
 }
+
 .playback_btn{
 	height: 38px; 
 	width: 38px;
+}
+
+.bottom > .playback_btn {
+    font-size: 2.3em;
+    padding: 0px 10px;
 }
 
 #progress_bar {
@@ -119,7 +135,7 @@ body{
     border-radius: 25px;
     padding: 3px;
     height: 41px;
-    left: 40px;
+    left: 50px;
     width: 255px;
 }
 
@@ -129,6 +145,7 @@ body{
 #camera {
     position: absolute;
     margin-top: 0px;
+    vertical-align: top;
 }
 .bookmarks {
     display: inline-block;

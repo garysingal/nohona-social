@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
   <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
   <link href="playback.css" rel="stylesheet">
 </head>
 
@@ -19,10 +21,14 @@
 			<div id="container" class="overlay">
 				<div class="top">
 					<div id="back">
-						<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+						<a href="index.html" data-ajax="false" class="playback_btn" role="button">
+							<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+						</a>
 					</div>
 					<div id="menu">
-						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext">Open panel</a>
+						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" role="button" class="playback_btn">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</a>
 
 						<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 							<table class="userList">
@@ -65,7 +71,11 @@
 				</div> <!-- close top -->				
 
 				<div class="bottom">
-					<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+					<div id="reaction_btn" class="playback_btn">
+						<img src="emoji_with_plus.png"  class="playback_btn">
+						<!-- <i class="fa fa-smile-o" aria-hidden="true"></i>
+						<i class="fa fa-plus overlay" aria-hidden="true"></i> -->
+					</div>
 					<div class="overlay bookmarks">
 						<div class="bookmark" id="bm_1"></div>
 						<div class="bookmark" id="bm_2"></div>
@@ -80,8 +90,11 @@
 						<img class="playback_btn" src="/assets/img/emoji_shy.png">
 					</div>
 					<div id="progress_bar"></div>
-					<div class="camera_box">
-						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+					<div class="camera_box playback_btn">
+<!-- 						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a> -->
+						<a href="index.html" id="camera" data-ajax="false" role="button" class="">
+							<i class="fa fa-video-camera" aria-hidden="true"></i>
+						</a>
 						<img id='success_camera' src='/assets/img/success.png'>
 					</div>
 				</div> <!-- closes bottom -->
@@ -95,7 +108,7 @@
 var cur_slide = 1;
 var nxt_bkmark = 1;
 
-function play_video_slides(){
+/*function play_video_slides(){
 	if(cur_slide <= 33){
 		cur_slide++
 		console.log(cur_slide);
@@ -106,7 +119,7 @@ function play_video_slides(){
 		clearInterval(video_interval);
 		window.location.replace('review.html');
 	}
-}
+}*/
 
 function emoji_opts(){	
 	$(".emoji-opts").toggle();
@@ -143,11 +156,12 @@ $(function (){
 			$("body").bind("tap",tapHandler);
 			function tapHandler(event){
 				// console.log("tapped!");
-				$(".top").slideDown("fast").delay(2000).fadeOut();
-				$(".bottom").slideDown("fast").delay(2000).fadeOut();
+				$(".top").slideDown("fast")/*.delay(2000).fadeOut();*/
+				$(".bottom").slideDown("fast")/*.delay(2000).fadeOut();*/
 				// $("popupPanel").hide();
 			}
 		});
+
 $(function(){
 
 	$("#reaction_btn").bind("tap", emoji_opts);
