@@ -13,7 +13,7 @@ body{
     width: 100vw;
     height: 100vh;
 }
-a:link, a:visited, a:hover, a:active {color: inherit !important;}      
+a:link, a:visited, a:hover, a:active {color: inherit !important;}
 
 .top{
     width: 100%;
@@ -51,7 +51,7 @@ a:link, a:visited, a:hover, a:active {color: inherit !important;}
 }
 
 .playback_btn{
-	height: 38px; 
+	height: 38px;
 	width: 38px;
 }
 
@@ -106,7 +106,7 @@ a:link, a:visited, a:hover, a:active {color: inherit !important;}
     display: inline-block;
     top: initial;
     bottom: 11%;
-    
+
 }
 
 .video img {
@@ -117,7 +117,8 @@ a:link, a:visited, a:hover, a:active {color: inherit !important;}
 
 
 .screen > * {
-	width: 100%;
+	width: 100vw;
+  height: 100vh;
 }
 
 
@@ -190,13 +191,13 @@ a:link, a:visited, a:hover, a:active {color: inherit !important;}
 
 
 #block_land{
-    position:absolute; 
-    top:0; 
-    left:0; 
-    text-align:center; 
-    background:white; 
-    width:100%; 
-    height:100%; 
+    position:absolute;
+    top:0;
+    left:0;
+    text-align:center;
+    background:white;
+    width:100%;
+    height:100%;
     display:none;
     z-index: 9999999;
 }

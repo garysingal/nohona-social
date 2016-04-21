@@ -33,7 +33,7 @@
 
 						<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 							<table class="userList">
-								Chat with - 
+								Chat with -
 								<tbody>
 									<tr>
 										<td><a href="chat.html"><img src="assets/img/person1.png" height="50"></a></td>
@@ -69,7 +69,7 @@
 							</table>
 						</div><!-- close popup -->
 					</div> <!-- close menu -->
-				</div> <!-- close top -->				
+				</div> <!-- close top -->
 
 				<div class="bottom">
 					<div id="reaction_btn" class="playback_btn">
@@ -114,7 +114,7 @@ function play_video_slides(){
 		cur_slide++
 		console.log(cur_slide);
 		var image_elt = document.getElementById('vid_img');
-		vid_img.src = "assets/video/"+cur_slide+".png";
+		vid_img.src = "assets/video_reaction/"+cur_slide+".png";
 	}
 	else{
 		clearInterval(video_interval);
@@ -123,7 +123,7 @@ function play_video_slides(){
 }
 
 /* Toggle emjoi options when tapped*/
-function emoji_opts(){	
+function emoji_opts(){
 	$(".emoji-opts").toggle();
 }
 

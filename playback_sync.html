@@ -8,6 +8,8 @@
   <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
   <link href="playback.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+
 </head>
 
 <body>
@@ -18,19 +20,22 @@
 					<img id="vid_img" src="assets/video/1.png"></img>
 			</div>
 			<div class="overlay video" >
-				<img src="/assets/sam-rxn.gif">
+				<img src="/assets/live.gif">
 			</div>
 			<div id="container" class="overlay">
 				<div class="top">
 					<div id="back">
-						<a href="index.html" data-ajax="false" data-role="button" data-icon="back" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-back ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+						<a href="index.html" data-ajax="false" class="playback_btn" role="button">
+							<i class="fa fa-angle-double-left" aria-hidden="true"></i>
+						</a>
 					</div>
 					<div id="menu">
-						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" data-role="button" data-icon="bars" data-iconpos="notext">Open panel</a>
-
+						<a href="#popupPanel" data-rel="popup" data-transition="slide" data-position-to="window" role="button" class="playback_btn">
+							<i class="fa fa-bars" aria-hidden="true"></i>
+						</a>
 						<div data-role="popup" id="popupPanel" data-corners="false" data-theme="none" data-shadow="false" data-tolerance="0,0">
 							<table class="userList">
-								Chat with - 
+								Chat with -
 								<tbody>
 									<tr>
 										<td><a href="chat.html"><img src="assets/img/person1.png" height="50"></a></td>
@@ -66,10 +71,12 @@
 							</table>
 						</div><!-- close popup -->
 					</div> <!-- close menu -->
-				</div> <!-- close top -->				
+				</div> <!-- close top -->
 
 				<div class="bottom">
-					<img src="reaction_button.png" id="reaction_btn" class="playback_btn">
+					<div id="reaction_btn" class="playback_btn">
+						<img src="emoji_with_plus.png"  class="playback_btn">
+					</div>
 					<div class="overlay bookmarks">
 						<div class="bookmark" id="bm_1"></div>
 						<div class="bookmark" id="bm_2"></div>
@@ -84,8 +91,11 @@
 						<img class="playback_btn" src="/assets/img/emoji_shy.png">
 					</div>
 					<div id="progress_bar"></div>
-					<div class="camera_box">
-						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a>
+					<div class="camera_box playback_btn">
+<!-- 						<a href="index.html"  id="camera" data-role="button" data-icon="camera" data-iconpos="notext" data-theme="a" data-inline="true" class="ui-link ui-btn ui-btn-a ui-icon-camera ui-btn-icon-notext ui-btn-inline ui-shadow ui-corner-all ui-first-child playback_btn" role="button">My button</a> -->
+						<a href="index.html" id="camera" data-ajax="false" role="button" class="">
+							<i class="fa fa-video-camera" aria-hidden="true"></i>
+						</a>
 						<img id='success_camera' src='/assets/img/success.png'>
 					</div>
 				</div> <!-- closes bottom -->
@@ -112,7 +122,7 @@ function play_video_slides(){
 	}
 }
 
-function emoji_opts(){	
+function emoji_opts(){
 	$(".emoji-opts").toggle();
 }
 
