@@ -3,15 +3,16 @@
   padding:0;
 }
 @font-face{
-  font-family: 'amatic';
-  src: url('assets/fonts/amatic/AmaticSC-Regular.ttf');
+  font-family: calibri,sans-serif;
+  font-size: 120%;
+  font-weight: lighter;
 }
 
-body{
+/*body{
   font-family:amatic,sans-serif;
   
 }
-
+*/
 ul{
   overflow:hidden;
   padding:10px 10px;
